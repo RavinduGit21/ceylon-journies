@@ -57,6 +57,28 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Tourism-specific colors
+        tropical: {
+          teal: "hsl(var(--tropical-teal))",
+          orange: "hsl(var(--sunset-orange))",
+          blue: "hsl(var(--ocean-blue))",
+          beige: "hsl(var(--sand-beige))",
+          green: "hsl(var(--forest-green))",
+        },
+      },
+      fontFamily: {
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-sunset": "var(--gradient-sunset)",
+        "gradient-ocean": "var(--gradient-ocean)",
+      },
+      boxShadow: {
+        tropical: "var(--shadow-tropical)",
+        card: "var(--shadow-card)",
+        glow: "var(--shadow-glow)",
       },
       borderRadius: {
         lg: "var(--radius)",
