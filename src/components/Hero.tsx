@@ -20,7 +20,7 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
             Discover Sri Lanka with{' '}
             <span className="gradient-sunset bg-clip-text text-transparent">
-              Serranid Journeys
+              Ceylon Journeys
             </span>
           </h1>
           
