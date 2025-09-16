@@ -23,7 +23,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-display font-bold gradient-hero bg-clip-text text-transparent">
-              Serranid Journeys
+              Ceylon Journies
             </h1>
           </div>
 
