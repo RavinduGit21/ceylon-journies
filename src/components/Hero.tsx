@@ -37,9 +37,8 @@ const Hero = () => {
               Plan Your Trip
             </Button>
             <Button 
-              variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white hover:text-foreground transition-colors px-8 py-4 text-lg backdrop-blur-sm"
+              className="bg-gradient-sunset hover:opacity-90 transition-opacity text-white font-semibold px-8 py-4 text-lg shadow-glow"
             >
               Explore Destinations
             </Button>
