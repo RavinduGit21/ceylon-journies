@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const location = useLocation();
+  const onHome = location.pathname === '/';
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -32,7 +35,7 @@ const Header = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
+                href={item.name === 'Home' ? (onHome ? '#home' : '/') : (onHome ? item.href : `/${item.href}`)}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -50,8 +53,8 @@ const Header = () => {
             >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-            <Button className="bg-gradient-hero hover:opacity-90 transition-opacity">
-              Plan Your Trip
+            <Button className="bg-gradient-hero hover:opacity-90 transition-opacity" asChild>
+              <a href="/plan">Plan Your Trip</a>
             </Button>
           </div>
 
@@ -83,7 +86,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <a
                   key={item.name}
-                  href={item.href}
+                  href={item.name === 'Home' ? (onHome ? '#home' : '/') : (onHome ? item.href : `/${item.href}`)}
                   className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -91,8 +94,8 @@ const Header = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full bg-gradient-hero hover:opacity-90 transition-opacity">
-                  Plan Your Trip
+                <Button className="w-full bg-gradient-hero hover:opacity-90 transition-opacity" asChild>
+                  <a href="/plan">Plan Your Trip</a>
                 </Button>
               </div>
             </div>

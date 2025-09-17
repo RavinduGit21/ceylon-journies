@@ -33,14 +33,16 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-sunset hover:opacity-90 transition-opacity text-white font-semibold px-8 py-4 text-lg shadow-glow"
+              asChild
             >
-              Plan Your Trip
+              <a href="/plan">Plan Your Trip</a>
             </Button>
             <Button 
               size="lg" 
               className="bg-gradient-sunset hover:opacity-90 transition-opacity text-white font-semibold px-8 py-4 text-lg shadow-glow"
+              asChild
             >
-              Explore Destinations
+              <a href="/plan">Explore Destinations</a>
             </Button>
           </div>
         </div>
