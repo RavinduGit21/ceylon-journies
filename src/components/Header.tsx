@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +25,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-display font-bold gradient-hero bg-clip-text text-transparent">
-              Ceylon Journies
-            </h1>
+            <Link to={onHome ? '/#home' : '/'} aria-label="Go to home">
+              <h1 className="text-2xl font-display font-bold gradient-hero bg-clip-text text-transparent">
+                Ceylon Journies
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
