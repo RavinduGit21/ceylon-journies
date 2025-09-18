@@ -166,7 +166,7 @@ const Chatbot = () => {
         <div
           role="dialog"
           aria-label="Virtual Assistant"
-          className="fixed bottom-24 sm:bottom-24 right-4 z-50 w-[90vw] max-w-sm bg-background border border-border rounded-2xl shadow-2xl overflow-hidden"
+          className="fixed bottom-24 sm:bottom-24 right-4 z-50 w-[78vw] max-w-[78vw] sm:w-[90vw] sm:max-w-sm bg-background border border-border rounded-2xl shadow-2xl overflow-hidden"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b bg-muted/50">
@@ -182,7 +182,7 @@ const Chatbot = () => {
           </div>
 
           {/* Messages */}
-          <div className="h-72">
+          <div className="h-[60vh] sm:h-72">
             <ScrollArea className="h-full p-4">
               <div className="space-y-3">
                 {messages.map((m) => (
