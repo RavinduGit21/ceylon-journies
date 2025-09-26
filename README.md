@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
+## Ceylon Journeys
 
-## Project info
+Discover Sri Lanka with a modern, fast, and responsive web app showcasing destinations, tours, hotels, and a handy "Plan Your Trip" tool. Built with React, TypeScript, Vite, Tailwind CSS, and shadcn‑ui components.
 
-**URL**: https://lovable.dev/projects/526e5df1-7246-41a2-a6b3-bbd953c70d25
+### Demo metadata
+- Title: Ceylon Journeys — Discover Sri Lanka's Beauty
+- SPA routing with `react-router-dom`
+- Vercel-ready deployment (`vercel.json` rewrite for SPA)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+### Features
+- Home page with sections: Header, Hero, Destinations, Hotels, Tours, About, Contact, Footer
+- Plan Your Trip page with filters (budget slider, duration, interests, search) and sample itineraries
+- Floating in‑app Chatbot with suggested Q&A and linkified replies
+- Theme support via `next-themes` and `TooltipProvider`
+- Toast and sonner notifications (`ui/toaster`, `ui/sonner`)
+- Responsive UI built with Tailwind and shadcn‑ui primitives
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/526e5df1-7246-41a2-a6b3-bbd953c70d25) and start prompting.
+### Tech Stack
+- React 18 + TypeScript
+- Vite 5 (React SWC plugin)
+- Tailwind CSS 3 + `tailwindcss-animate`
+- shadcn‑ui components (Radix UI under the hood)
+- React Router v6
+- TanStack Query for async state
+- Zod, React Hook Form (available in deps)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+### Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Prerequisites: Node.js 18+ and npm.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# start dev server (http://localhost:8080)
 npm run dev
+
+# production build
+npm run build
+
+# preview production build
+npm run preview
+
+# lint
+npm run lint
 ```
 
-**Edit a file directly in GitHub**
+Vite dev server is configured to run on port 8080 and listen on all interfaces.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+.
+├─ public/
+│  └─ logo.png, favicons, robots.txt
+├─ src/
+│  ├─ assets/               # images used across the app
+│  ├─ components/
+│  │  ├─ ui/                # shadcn‑ui components
+│  │  ├─ Chatbot.tsx
+│  │  ├─ Header.tsx, Footer.tsx, Hero.tsx, ...
+│  ├─ hooks/
+│  ├─ lib/
+│  ├─ pages/
+│  │  ├─ Index.tsx          # home page
+│  │  ├─ PlanYourTrip.tsx   # filters and itineraries
+│  │  └─ NotFound.tsx
+│  ├─ App.tsx               # router and providers
+│  ├─ main.tsx              # React root
+│  └─ index.css             # Tailwind layers and design tokens
+├─ index.html               # app shell
+├─ tailwind.config.ts       # Tailwind setup
+├─ vite.config.ts           # Vite + aliases + plugins
+├─ tsconfig.json            # path alias `@/*`
+└─ vercel.json              # SPA rewrites for Vercel
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+### Routing
+Defined in `src/App.tsx` using `react-router-dom`:
+- `/` → `pages/Index`
+- `/plan` → `pages/PlanYourTrip`
+- `*` → `pages/NotFound`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+`vercel.json` includes a catch‑all rewrite to `/` for client‑side routing.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/526e5df1-7246-41a2-a6b3-bbd953c70d25) and click on Share -> Publish.
+### UI System
+- Tailwind configuration extends colors, shadows, radii, typography, and animations
+- Design tokens are defined in `src/index.css` as CSS variables (HSL)
+- shadcn‑ui components live in `src/components/ui`
 
-## Can I connect a custom domain to my Lovable project?
+Helpful utilities:
+- Alias `@` → `./src` (configured in `vite.config.ts` and `tsconfig`)
+- `Toaster` and `Sonner` mounted in `App.tsx`
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Development Notes
+- Dev server: `vite` on port 8080
+- Build modes: `npm run build` (prod), `npm run build:dev` (development mode bundle)
+- Linting via ESLint 9 + TypeScript ESLint
+- Images are imported from `src/assets`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+### Deployment (Vercel)
+This project is ready for Vercel. Key points:
+- `vercel.json` rewrites all routes to `/` (SPA)
+- Build command: `npm run build`
+- Output directory: `dist`
+
+On other static hosts, ensure unknown routes are served by `index.html`.
+
+---
+
+### Contributing
+1. Fork and create a feature branch
+2. Install dependencies and run `npm run dev`
+3. Commit with clear messages and open a PR
+
+---
+
+### License
+This project is provided as‑is. Add a license file if you plan to distribute.
