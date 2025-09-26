@@ -2,8 +2,9 @@
 
 Discover Sri Lanka with a modern, fast, and responsive web app showcasing destinations, tours, hotels, and a handy "Plan Your Trip" tool. Built with React, TypeScript, Vite, Tailwind CSS, and shadcn‑ui components.
 
-### Demo metadata
-- Title: Ceylon Journeys — Discover Sri Lanka's Beauty
+### Demo
+- **URL**: https://ceylon-journies.vercel.app/
+- **Title**: Ceylon Journeys — Discover Sri Lanka's Beauty
 - SPA routing with `react-router-dom`
 - Vercel-ready deployment (`vercel.json` rewrite for SPA)
 
