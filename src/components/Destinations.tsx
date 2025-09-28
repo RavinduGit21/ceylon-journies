@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Star } from 'lucide-react';
 
@@ -121,9 +122,12 @@ const Destinations = () => {
                   </div>
                   
                   <Button 
+                    asChild
                     className="w-full bg-gradient-ocean hover:opacity-90 transition-opacity"
                   >
-                    View More
+                    <Link to={destination.name === 'Ella' ? '/destinations/ella' : '#'}>
+                      View More
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
