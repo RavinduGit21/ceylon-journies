@@ -125,7 +125,15 @@ const Destinations = () => {
                     asChild
                     className="w-full bg-gradient-ocean hover:opacity-90 transition-opacity"
                   >
-                    <Link to={destination.name === 'Ella' ? '/destinations/ella' : '#'}>
+                    <Link to={
+                      destination.name === 'Ella' ? '/destinations/ella' :
+                      destination.name === 'Galle Fort' ? '/destinations/galle-fort' :
+                      destination.name === 'Mirissa Beach' ? '/destinations/mirissa-beach' :
+                      destination.name === 'Kandy Temple' ? '/destinations/kandy-temple' :
+                      destination.name === 'Yala National Park' ? '/destinations/yala-national-park' :
+                      destination.name === 'Nuwara Eliya' ? '/destinations/nuwara-eliya' :
+                      '#'
+                    }>
                       View More
                     </Link>
                   </Button>
